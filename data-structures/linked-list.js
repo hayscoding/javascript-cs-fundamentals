@@ -25,14 +25,35 @@ class LinkedList {
         }
     }
 
+    removeNode(data) {
+        let previous = this.head;
+        let current = this.head;
+
+        while(current) {
+            if(current.data === data) {
+                if(current === this.head) 
+                    this.head = this.head.next; //Replace head node with the node after it
+                else if(current === this.tail)
+                    this.tail = previous;   // Replace tail with node before it
+
+                previous.next = current.next;   // 
+
+                break;
+            } 
+            
+            previous = current;
+            current = current.next;
+        }
+    }
+
     //  Calls cb(node) for all nodes, starting with head
     traverse(cb) {
-        let current = this.head
+        let current = this.head;
         
         if(cb)  //  Only loop if a function was passed
             while (current) {
-                cb(current)
-                current = current.next  //  Move to next node
+                cb(current);
+                current = current.next;  //  Move to next node
             }
     }
 }
@@ -41,9 +62,10 @@ class LinkedList {
 (function test() {
     let linkedList = new LinkedList();
 
-    linkedList.addNode("first node")
-    linkedList.addNode("second node")
-    linkedList.addNode("third node")
+    linkedList.addNode("first node");
+    linkedList.addNode("second node");
+    linkedList.addNode("third node");
+    linkedList.addNode("fourth node")
 
-    linkedList.traverse((node) => { console.log(node.data) })
+    linkedList.traverse((node) => { console.log(node.data) });
 })()
