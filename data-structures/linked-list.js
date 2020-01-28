@@ -45,5 +45,5 @@ class LinkedList {
     linkedList.addNode("second node")
     linkedList.addNode("third node")
 
-    traverse((node) => { console.log(node.data) })
+    linkedList.traverse((node) => { console.log(node.data) })
 })()
