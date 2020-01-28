@@ -32,11 +32,11 @@ class LinkedList {
         while(current) {
             if(current.data === data) {
                 if(current === this.head) 
-                    this.head = this.head.next; //Replace head node with the node after it
+                    this.head = this.head.next; // Replace head node with the node after it
                 else if(current === this.tail)
-                    this.tail = previous;   // Replace tail with node before it
+                    this.tail = previous;       // Replace tail with node before it
 
-                previous.next = current.next;   // 
+                previous.next = current.next;   // Replace current node with the node after it
 
                 break;
             } 
