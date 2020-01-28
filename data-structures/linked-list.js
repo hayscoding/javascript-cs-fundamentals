@@ -3,7 +3,7 @@ function Node(data) {
     this.next = null;
 }
 
-class LinkedList{
+class LinkedList {
     constructor() {
         this.head = null;   //  Node at start of list
         this.tail = null;   //  Node at end of list
@@ -36,3 +36,14 @@ class LinkedList{
             }
     }
 }
+
+// Run tests to ensure data structure works
+(function test() {
+    let linkedList = new LinkedList();
+
+    linkedList.addNode("first node")
+    linkedList.addNode("second node")
+    linkedList.addNode("third node")
+
+    traverse((node) => { console.log(node.data) })
+})()
