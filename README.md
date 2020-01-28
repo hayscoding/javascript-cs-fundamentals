@@ -7,7 +7,7 @@
 
 > A compilation of data structure & algorithm impelmentations in JavaScript that are widely regarded as common knowledge for CS engineers.
 
-### 🏠 [Homepage](haysstanford.com)
+### 🏠 [Homepage](https://haysstanford.com)
 
 ## Author
 
