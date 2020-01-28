@@ -67,5 +67,20 @@ class LinkedList {
     linkedList.addNode("third node");
     linkedList.addNode("fourth node")
 
+    console.log("Nodes: ")
     linkedList.traverse((node) => { console.log(node.data) });
+
+    removeAndLog(linkedList, "third node");     // Remove node not head or tail
+    removeAndLog(linkedList, "first node");     // Remove head
+    removeAndLog(linkedList, "fourth node");    // Remove tail
+    removeAndLog(linkedList, "second node");    // Remove last node
+
 })()
+
+function removeAndLog(linkedList, str) {
+    console.log(`\nRemove node: ${str}`);
+    linkedList.removeNode(str);
+
+    console.log("Updated nodes: ");
+    linkedList.traverse((node) => { console.log(node.data) });
+}
