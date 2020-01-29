@@ -15,6 +15,16 @@ class HashTable {
         this.values[hash][key] = value;
     }
 
+    remove(key) {
+        const hash = this.genHash(key);
+
+        // If this.values has property at hash with a key
+        if(this.values.hasOwnProperty(hash) &&
+                this.values[hash].hasOwnProperty(key)) {
+            delete this.values[hash][key]; // Delete the value
+        }
+    }
+
     genHash(key) {
         var keyStr = key.toString();
         var sum = 0;
@@ -40,6 +50,12 @@ class HashTable {
 
     hashTable.add("key1", "value1");
     hashTable.add("key2", "value2");
+    hashTable.add("key3", "value3");
+
+    hashTable.printAll();
+
+    console.log(`delete key2`)
+    hashTable.remove("key2")
 
     hashTable.printAll();
 
