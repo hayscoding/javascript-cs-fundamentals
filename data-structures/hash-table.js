@@ -67,8 +67,17 @@ class HashTable {
 
     console.log(`value of key3: `, hashTable.getValue("key3"))
 
-    console.log(`delete key2`)
-    hashTable.remove("key2")
+    console.log(`delete key3`)
+    hashTable.remove("key3")
 
     hashTable.printAll();
+
+    console.log(`value of key3: `, hashTable.getValue("key3"))
+
+    console.log(`delete key2 & key1`)
+    hashTable.remove("key2")
+    hashTable.remove("key1")
+
+    hashTable.printAll();
+
 })()
