@@ -5,13 +5,17 @@ class HashTable {
         this.size = size;
     }
 
+
+
     genHash(key) {
         var keyStr = key.toString();
         var sum = 0;
 
+        // Sum ASCII values of all chars in keyStr
         for(let i = 0; i < keyStr.length; i++)
             sum += keyStr.charCodeAt(i);
 
+        // Ensures index is in range of array
         return sum % this.size
     }
 }
