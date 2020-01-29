@@ -37,6 +37,17 @@ class HashTable {
         return sum % this.size
     }
 
+    getValue(key) {
+        const hash = this.genHash(key);
+
+        // If this key value pair exists in table
+        if(this.values.hasOwnProperty(hash)
+                && this.values[hash].hasOwnProperty(key))
+            return this.values[hash][key]; // Return the key's value
+        else
+            return undefined;
+    }
+
     printAll() {
         for(const val in this.values)
             for(const key in this.values[val])
@@ -53,6 +64,8 @@ class HashTable {
     hashTable.add("key3", "value3");
 
     hashTable.printAll();
+
+    console.log(`value of key3: `, hashTable.getValue("key3"))
 
     console.log(`delete key2`)
     hashTable.remove("key2")
