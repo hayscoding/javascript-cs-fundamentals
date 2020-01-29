@@ -58,6 +58,4 @@ class HashTable {
     hashTable.remove("key2")
 
     hashTable.printAll();
-
-    // console.log("hash: ", hashTable.genHash("test"))
 })()
