@@ -17,5 +17,7 @@ class HashTable {
 }
 
 (function test() {
-    console.log('test')
+    var hashTable = new HashTable(5);
+
+    console.log("hash: ", hashTable.genHash("test"))
 })()
