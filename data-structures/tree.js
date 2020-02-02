@@ -25,21 +25,35 @@ class Tree {
         }
     }
 
-    // findBFS(data) {
-    //     const queue = [this.root];
+    findBFS(data) {
+        const queue = [this.root];
 
-    //     while(queue.length) {
-    //         const node = queue.shift();
-    //     }
-    // }
+        while(queue.length) {
+            // Store current node & remove it from queue
+            const node = queue.shift();
+
+            // Return match if found
+            if(node.data === data) {
+                return node;
+            }
+
+            // Push children of current node to the queue
+            for (const child of node.children) {
+                queue.push(child);
+            }
+        }
+
+        // Return null if a match was never found
+        return null;
+    }
 }
 
 (function test() {
     let tree = new Tree()
 
     tree.add('Node1')
-    // tree.add('Node2')
-    // tree.add('Node3')
+    tree.add('Node2', 'Node1')
+    tree.add('Node3', 'Node1')
 
     console.log(tree)
 })()
