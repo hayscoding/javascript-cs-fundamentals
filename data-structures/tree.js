@@ -27,24 +27,17 @@ class Tree {
 
     findBFS(data) {
         const queue = [this.root];
+        let _node = null;
 
-        while(queue.length) {
-            // Store current node & remove it from queue
-            const node = queue.shift();
-
+        // Go thru every node in BFS
+        this.traverseBFS((node) => {
             // Return match if found
             if(node.data === data) {
-                return node;
+                _node = node;
             }
+        })
 
-            // Push children of current node to end of queue
-            for (const child of node.children) {
-                queue.push(child);
-            }
-        }
-
-        // Return null if a match was never found
-        return null;
+        return _node;
     }
 
     traverseBFS(cb) {
@@ -68,9 +61,12 @@ class Tree {
 (function test() {
     let tree = new Tree()
 
+
     tree.add('Node1')
     tree.add('Node2', 'Node1')
     tree.add('Node3', 'Node1')
 
-    tree.traverseBFS((node) => {console.log(node)})
+    console.log(tree.findBFS('Node1'))
+
+    // tree.traverseBFS((node) => {console.log(node)})
 })()
