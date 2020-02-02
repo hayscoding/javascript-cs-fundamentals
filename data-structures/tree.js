@@ -19,13 +19,27 @@ class Tree {
         } else {
             // If there's no parent, make this the root node
             if(!this.root)
-                parent.children.push(node);
+                this.root = node;
             else
                 return "Tried to store node as root when root already exists."
         }
     }
+
+    // findBFS(data) {
+    //     const queue = [this.root];
+
+    //     while(queue.length) {
+    //         const node = queue.shift();
+    //     }
+    // }
 }
 
 (function test() {
-    console.log('test')
+    let tree = new Tree()
+
+    tree.add('Node1')
+    // tree.add('Node2')
+    // tree.add('Node3')
+
+    console.log(tree)
 })()
