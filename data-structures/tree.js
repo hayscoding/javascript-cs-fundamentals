@@ -13,7 +13,7 @@ class Tree {
         // If the toNodeData arg is passed, find it. Otherwise, store null.
         const parent = toNodeData ? this.findBFS(toNodeData) : null;
 
-        // Push new node to parent with passed toNodeData in its data
+        // Push new node to parent whose value matches toNodeData
         if(parent) {
             parent.children.push(node)
         } else {
@@ -37,7 +37,7 @@ class Tree {
                 return node;
             }
 
-            // Push children of current node to the queue
+            // Push children of current node to end of queue
             for (const child of node.children) {
                 queue.push(child);
             }
@@ -45,6 +45,23 @@ class Tree {
 
         // Return null if a match was never found
         return null;
+    }
+
+    traverseBFS(cb) {
+        const queue = [this.root];
+
+        if(cb)
+            while(queue.length) {
+                // Store current node & remove it from queue
+                const node = queue.shift();
+
+                cb(node)
+
+                    // Push children of current node to end of queue
+                    for(const child of node.children) {
+                    queue.push(child);
+                }
+            }
     }
 }
 
@@ -55,5 +72,5 @@ class Tree {
     tree.add('Node2', 'Node1')
     tree.add('Node3', 'Node1')
 
-    console.log(tree)
+    tree.traverseBFS((node) => {console.log(node)})
 })()
