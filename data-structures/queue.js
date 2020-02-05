@@ -3,3 +3,7 @@ class Queue {
         this.queue = [];
     }
 }
+
+(function test() {
+    console.log('test')
+})()
