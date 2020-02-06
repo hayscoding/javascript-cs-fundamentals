@@ -3,8 +3,6 @@ function insertionSort(array) {
         let temp = array[i];
         let j = i - 1;
 
-        console.log(`i: ${i}, temp: ${temp}`)
-        
         // Moves temp to position where it is less than
         // all the numbers in front of its index
         while(array[j] > temp) {
@@ -29,6 +27,6 @@ function insertionSort(array) {
     const testArray3 = [2, 1]
 
     console.log(insertionSort(testArray1))
-    // console.log(insertionSort(testArray2))
-    // console.log(insertionSort(testArray3))
+    console.log(insertionSort(testArray2))
+    console.log(insertionSort(testArray3))
 })()
