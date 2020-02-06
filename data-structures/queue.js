@@ -3,14 +3,23 @@ class Queue {
         this.queue = [];
     }
 
+    // Push value to end of queue array
     enqueue(value) {
-        // Push value to end of queue array
         this.queue.push(value); 
     }
 
+    // Return & delete the first value in queue array
     dequeue() {
-        // Return & delete the first value in queue array
         return this.queue.shift();
+    }
+
+    // Return first item in queue array
+    peek() {
+        return this.queue[0]
+    }
+
+    length() {
+        return this.queue.length;
     }
 }
 
