@@ -40,4 +40,7 @@ class Queue {
     queue.dequeue()
 
     queue.print()
+
+    console.log(queue.peek())
+    console.log(queue.length())
 })()
