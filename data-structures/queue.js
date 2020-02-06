@@ -23,10 +23,17 @@ class Queue {
     }
 
     print() {
-        console.log(this.queue.join('->'))
+        console.log(this.queue.join(' -> '))
     }
 }
 
 (function test() {
-    console.log('test')
+    var queue = new Queue();
+
+    queue.enqueue('Node1')
+    queue.enqueue('Node2')
+    queue.enqueue('Node3')
+    queue.enqueue('Node4')
+
+    queue.print()
 })()
