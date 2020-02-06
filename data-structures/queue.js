@@ -21,6 +21,10 @@ class Queue {
     length() {
         return this.queue.length;
     }
+
+    print() {
+        console.log(this.queue.join('->'))
+    }
 }
 
 (function test() {
