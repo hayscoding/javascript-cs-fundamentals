@@ -36,4 +36,8 @@ class Queue {
     queue.enqueue('Node4')
 
     queue.print()
+
+    queue.dequeue()
+
+    queue.print()
 })()
