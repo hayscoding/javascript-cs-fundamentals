@@ -7,7 +7,7 @@ function mergeSortTopDown(array) {
     const left = array.slice(0, middle);
     const right = array.slice(middle);
 
-    return mergeSortTopDown(mergeSortTopDown(left), mergeSortTopDown(right))
+    return mergeTopDown(mergeSortTopDown(left), mergeSortTopDown(right))
 }
 
 function mergeTopDown(left, right) {
