@@ -57,32 +57,6 @@ class Graph {
         return this.numberOfEdges;
     }
 
-    traverseDFS(vertex, cb) {
-        if(this.vertices.indexOf(vertex) < 0) {
-            return console.log("There isn't a vertex here")
-        }
-
-        const visited = [];
-        this.traverseDFS(vertex, visited, cb)
-    }
-
-    traverseDFS(vertex, visited, cb) {
-        visited[vertex] = true;
-
-        if(this.edges[vertex] !== undefined) {
-            cb(vertex);
-        }
-
-        // Go thru all vertices adjacent to current vertex
-        for(let i = 0; i < this.edges[vertex].length; i++) {
-            if(!visited[this.edges[vertex][i]]) {
-                // This recursively goes thru every vertex with a connection 
-                // to the current edge, even if it's multiple degrees away
-                this.traverseDFS(this.edges[vertex][i], visited, cb)
-            }
-        }
-    }
-
     print() {
         console.log(this.vertices.map(vertex => {
             return(`${vertex} => ${this.edges[vertex].join(', ')}`).trim();
