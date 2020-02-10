@@ -28,8 +28,8 @@ class Graph {
     }
 
     addEdge(vertex1, vertex2) {
-        this.edge[vertex1].push(vertex2);
-        this.edge[vertex2].push(vertex1);
+        this.edges[vertex1].push(vertex2);
+        this.edges[vertex2].push(vertex1);
         this.numberOfEdges++;
     }
 
@@ -97,6 +97,8 @@ class Graph {
     graph.addVertex("Node2")
     graph.addVertex("Node3")
     graph.addVertex("Node4")
+
+    graph.addEdge("Node1", "Node2")
 
     graph.print()
 })()
