@@ -15,7 +15,7 @@ class Graph {
         const index = this.vertices.indexOf(vertex);
 
         if(index >= 0) {
-            this.vertices.slice(index, 1);
+            this.vertices.splice(index, 1);
         }
 
         // If this vertex has an edge
@@ -110,5 +110,10 @@ class Graph {
     console.log("remove edge")
 
     graph.removeEdge("Node1", "Node2")
+    graph.print()
+
+    console.log("remove vertex")
+
+    graph.removeVertex("Node1")
     graph.print()
 })()
