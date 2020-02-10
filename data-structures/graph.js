@@ -99,6 +99,13 @@ class Graph {
     graph.addVertex("Node4")
 
     graph.addEdge("Node1", "Node2")
+    graph.addEdge("Node1", "Node3")
+    graph.addEdge("Node1", "Node4")
+
+    graph.addEdge("Node2", "Node3")
+    graph.addEdge("Node2", "Node4")
+
+
 
     graph.print()
 })()
