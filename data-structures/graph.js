@@ -32,6 +32,21 @@ class Graph {
         this.edge[vertex2].push(vertex1);
         this.numberOfEdges++;
     }
+
+    removeEdge(vertex1, vertex2) {
+        const index1 = this.edges[vertex1] ? this.edges[vertex1].indexOf(vertex2) : -1;
+        const index2 = this.edges[vertex2] ? this.edges[vertex2].indexOf(vertex1) : -1;
+
+        if(index1 >= 0) {
+            // Remove vertex2 from the vertex1 array
+            this.edges[vertex1].splice(index1, 1);
+        }
+
+        if(index2 >= 0) {
+            // Remove vertex1 from the vertex2 array
+            this.edges[vertex2].splice(index2, 1);
+        }
+    }
 }
 
 (function test() {
