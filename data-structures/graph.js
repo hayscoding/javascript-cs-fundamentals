@@ -4,6 +4,12 @@ class Graph {
         this.edges = [];
         this.numberOfEdges = 0;
     }
+
+    addVertex(vertex) {
+        this.vertices.push(vertex);
+
+        this.edges
+    }
 }
 
 (function test() {
