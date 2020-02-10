@@ -82,6 +82,12 @@ class Graph {
             }
         }
     }
+
+    print() {
+        console.log(this.vertices.map(vertex => {
+            return(`${vertex} => ${this.edges[vertex].join(', ')}`).trim();
+        }, this).join(' | '));
+    }
 }
 
 (function test() {
