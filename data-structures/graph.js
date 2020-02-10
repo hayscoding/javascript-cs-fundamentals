@@ -47,6 +47,14 @@ class Graph {
             this.edges[vertex2].splice(index2, 1);
         }
     }
+
+    size() {
+        return this.vertices.length;
+    }
+
+    relations() {
+        return this.numberOfEdges;
+    }
 }
 
 (function test() {
