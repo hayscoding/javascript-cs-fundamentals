@@ -98,7 +98,5 @@ class Graph {
     graph.addVertex("Node3")
     graph.addVertex("Node4")
 
-    graph.addEdge("Node1", "Node2")
-
     graph.print()
 })()
