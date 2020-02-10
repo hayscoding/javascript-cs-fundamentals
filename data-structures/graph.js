@@ -40,7 +40,7 @@ class Graph {
         if(index1 >= 0) {
             // Remove vertex2 from the vertex1 array
             this.edges[vertex1].splice(index1, 1);
-            numberOfEdges--;
+            this.numberOfEdges--;
         }
 
         if(index2 >= 0) {
@@ -105,7 +105,10 @@ class Graph {
     graph.addEdge("Node2", "Node3")
     graph.addEdge("Node2", "Node4")
 
+    graph.print()
 
+    console.log("remove edge")
 
+    graph.removeEdge("Node1", "Node2")
     graph.print()
 })()
