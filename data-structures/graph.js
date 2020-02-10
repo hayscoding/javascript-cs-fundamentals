@@ -40,6 +40,7 @@ class Graph {
         if(index1 >= 0) {
             // Remove vertex2 from the vertex1 array
             this.edges[vertex1].splice(index1, 1);
+            numberOfEdges--;
         }
 
         if(index2 >= 0) {
