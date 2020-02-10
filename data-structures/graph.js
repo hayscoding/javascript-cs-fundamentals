@@ -26,6 +26,12 @@ class Graph {
             this.removeEdge(adjacentVertex, vertex);
         }
     }
+
+    addEdge(vertex1, vertex2) {
+        this.edge[vertex1].push(vertex2);
+        this.edge[vertex2].push(vertex1);
+        this.numberOfEdges++;
+    }
 }
 
 (function test() {
