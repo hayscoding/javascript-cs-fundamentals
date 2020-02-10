@@ -91,5 +91,12 @@ class Graph {
 }
 
 (function test() {
-    console.log('test')
+    let graph = new Graph();
+
+    graph.addVertex("Node1")
+    graph.addVertex("Node2")
+    graph.addVertex("Node3")
+    graph.addVertex("Node4")
+
+    graph.print()
 })()
