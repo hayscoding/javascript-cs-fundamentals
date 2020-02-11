@@ -4,5 +4,6 @@ function Node(data) {
 }
 
 (function test() {
-    console.log('test')
+    let node1 = new Node('Node1')
+    console.table(node1.right)
 })()
