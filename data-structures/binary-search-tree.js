@@ -113,6 +113,16 @@ class BinarySearchTree {
             this.preOrder(current, cb);
         }
     }
+
+    printDFS() {
+        this.traverseDFS((node) => {
+            console.log(
+                `Node.data: ${node.data}`,
+                `Node.left: ${node.left ? node.left.data : null}`,
+                `Node.right: ${node.right ? node.right.data : null}`
+            )
+        })
+    }
 }
 
 (function test() {
@@ -126,11 +136,5 @@ class BinarySearchTree {
     tree.add(6)
     tree.add(9)
 
-    tree.traverseDFS((node) => {
-        console.log(
-            `Node.data: ${node.data}`,
-            `Node.left: ${node.left ? node.left.data : null}`,
-            `Node.right: ${node.right ? node.right.data : null}`
-        )
-    })
+    tree.printDFS();
 })()
