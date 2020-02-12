@@ -46,7 +46,7 @@ class BinarySearchTree {
     }
 
     remove(data) {
-        this.root = removeNode(this.root, data);
+        this.root = this.removeNode(this.root, data);
     }
 
     removeNode(node, data) {
@@ -80,6 +80,18 @@ class BinarySearchTree {
             return node;
         }
     }
+
+    getMin(node) {
+        if(!node) {
+            node = this.root;
+        }
+
+        while(node.left) {
+            node = node.left;
+        }
+
+        return node.data;
+    }
 }
 
 (function test() {
@@ -91,4 +103,8 @@ class BinarySearchTree {
     tree.add(4)
 
     console.log(tree)
+
+    // console.log('remove 2')
+    // tree.remove(2)
+    // console.log(tree)
 })()
