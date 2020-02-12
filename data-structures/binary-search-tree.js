@@ -70,13 +70,13 @@ class BinarySearchTree {
             const temp = this.getMin(node.right);
             node.data = temp;
 
-            node.right = removeNode(node.right, temp);
+            node.right = this.removeNode(node.right, temp);
             return node;
         } else if(data < node.data) {
-            node.left = removeNode(node.left, data);
+            node.left = this.removeNode(node.left, data);
             return node;
         } else {
-            node.right = removeNode(node.right, data);
+            node.right = this.removeNode(node.right, data);
             return node;
         }
     }
