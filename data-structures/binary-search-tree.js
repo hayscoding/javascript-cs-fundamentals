@@ -12,7 +12,7 @@ class BinarySearchTree {
     add(data) {
         const node = new Node(data);
 
-        if(!this.root) {
+        if (!this.root) {
             // Set root node if there are no nodes
             this.root = node;
         } else {
@@ -23,24 +23,24 @@ class BinarySearchTree {
     insertNode(node) {
         let current = this.root;
 
-        while(current) {
+        while (current) {
             // Nodes data is smaller than current node's data
-            if(node.data < current.data) {
+            if (node.data < current.data) {
                 // There is no node at current's left pointer
-                if(!current.left) {
+                if (!current.left) {
                     current.left = node;
                     break;
                 }
                 // Loop until !current.left returns true
                 current = current.left
-            } else if(node.data > current.data) {
-                if(!current.right) {
+            } else if (node.data > current.data) {
+                if (!current.right) {
                     current.right = node;
                     break;
                 }
 
                 current = current.right;
-            } else 
+            } else
                 break;
         }
     }
@@ -50,20 +50,20 @@ class BinarySearchTree {
     }
 
     removeNode(node, data) {
-        if(!node) {
+        if (!node) {
             return null;
         }
 
-        if(data === node.data) {
-            if(!node.left && !node.right) { 
+        if (data === node.data) {
+            if (!node.left && !node.right) {
                 return null
             }
-            
-            if(!node.left) {
+
+            if (!node.left) {
                 return node.right;
             }
 
-            if(!node.right) {
+            if (!node.right) {
                 return node.left;
             }
 
@@ -72,7 +72,7 @@ class BinarySearchTree {
 
             node.right = this.removeNode(node.right, temp);
             return node;
-        } else if(data < node.data) {
+        } else if (data < node.data) {
             node.left = this.removeNode(node.left, data);
             return node;
         } else {
@@ -82,11 +82,11 @@ class BinarySearchTree {
     }
 
     getMin(node) {
-        if(!node) {
+        if (!node) {
             node = this.root;
         }
 
-        while(node.left) {
+        while (node.left) {
             node = node.left;
         }
 
@@ -97,14 +97,19 @@ class BinarySearchTree {
 (function test() {
     let tree = new BinarySearchTree()
 
-    tree.add(2)
+    tree.add(5)
     tree.add(3)
     tree.add(1)
     tree.add(4)
+    tree.add(7)
+    tree.add(6)
+    tree.add(9)
 
+    // tree.printByLevel();
     console.log(tree)
 
-    console.log('remove 2')
-    tree.remove(2)
-    console.log(tree)
+
+    // console.log('remove 2')
+    // tree.remove(2)
+    // console.log(tree)
 })()
