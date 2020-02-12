@@ -42,7 +42,9 @@ class BinarySearchTree {
 }
 
 (function test() {
-    let node1 = new Node('Node1')
+    let tree = new BinarySearchTree()
 
-    console.table(node1.right)
+    tree.add('Node1')
+
+    console.table(tree)
 })()
