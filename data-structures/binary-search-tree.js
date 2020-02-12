@@ -93,13 +93,13 @@ class BinarySearchTree {
         return node.data;
     }
 
-    traverseDFS(fn, method) {
+    traverseDFS(cb, method) {
         const current = this.root;
 
         if (method) {
-            this[`${method}`](current, fn);
+            this[`${method}`](current, cb);
         } else {
-            this.preOrder(current, fn);
+            this.preOrder(current, cb);
         }
     }
 }
