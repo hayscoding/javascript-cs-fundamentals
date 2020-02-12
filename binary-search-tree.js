@@ -1,6 +1,7 @@
 function Node(data) {
     this.data = data;
-    this.left, this.right = null;
+    this.left = null;
+    this.right = null;
 }
 
 class BinarySearchTree {
