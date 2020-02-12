@@ -93,6 +93,16 @@ class BinarySearchTree {
         return node.data;
     }
 
+    preOrder(node, fn) {
+        if (node) {
+            if (fn) {
+                fn(node);
+            }
+            this.preOrder(node.left, fn);
+            this.preOrder(node.right, fn);
+        }
+    }
+
     traverseDFS(cb, method) {
         const current = this.root;
 
