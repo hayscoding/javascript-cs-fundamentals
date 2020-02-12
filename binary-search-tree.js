@@ -40,12 +40,16 @@ class BinarySearchTree {
             }
         }
     }
+
+    
 }
 
 (function test() {
     let tree = new BinarySearchTree()
 
-    tree.add('Node1')
+    tree.add(1)
+    tree.add(2)
+    tree.add(3)
 
-    console.table(tree)
+    console.log(tree)
 })()
