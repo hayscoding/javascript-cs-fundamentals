@@ -123,6 +123,17 @@ class BinarySearchTree {
             )
         })
     }
+
+    getHeight(node) {
+        if (!node) {
+            return -1;
+        }
+
+        const left = this.getHeight(node.left);
+        const right = this.getHeight(node.right);
+
+        return Math.max(left, right) + 1;
+    }
 }
 
 (function test() {
