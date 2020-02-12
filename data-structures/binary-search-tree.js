@@ -104,7 +104,7 @@ class BinarySearchTree {
 
     console.log(tree)
 
-    // console.log('remove 2')
-    // tree.remove(2)
-    // console.log(tree)
+    console.log('remove 2')
+    tree.remove(2)
+    console.log(tree)
 })()
