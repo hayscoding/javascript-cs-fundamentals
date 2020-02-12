@@ -130,7 +130,11 @@ class BinarySearchTree {
     // console.log(tree)
 
     tree.traverseDFS((node) => {
-        console.log(`Node.data: ${node.data}`)
+        console.log(
+            `Node.data: ${node.data}`,
+            `Node.left: ${node.left ? node.left.data : null}`,
+            `Node.right: ${node.right ? node.right.data : null}`
+        )
     })
 
 
