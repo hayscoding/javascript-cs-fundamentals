@@ -116,7 +116,11 @@ class BinarySearchTree {
     tree.add(9)
 
     // tree.printByLevel();
-    console.log(tree)
+    // console.log(tree)
+
+    tree.traverseDFS((node) => {
+        console.log(`Node.data: ${node.data}`)
+    })
 
 
     // console.log('remove 2')
